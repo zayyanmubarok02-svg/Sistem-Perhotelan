@@ -87,7 +87,7 @@ namespace PerhotelanZayyan
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(23, 458);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(23, 378);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.ReadOnly = true;
             this.guna2DataGridView1.RowHeadersVisible = false;
@@ -146,7 +146,8 @@ namespace PerhotelanZayyan
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(634, 237);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(634, 157);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 20);
             this.label2.TabIndex = 70;
@@ -156,7 +157,8 @@ namespace PerhotelanZayyan
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(315, 237);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(315, 157);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 20);
             this.label3.TabIndex = 71;
@@ -171,7 +173,7 @@ namespace PerhotelanZayyan
             this.btntambah.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btntambah.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btntambah.ForeColor = System.Drawing.Color.White;
-            this.btntambah.Location = new System.Drawing.Point(978, 399);
+            this.btntambah.Location = new System.Drawing.Point(978, 319);
             this.btntambah.Name = "btntambah";
             this.btntambah.Size = new System.Drawing.Size(177, 44);
             this.btntambah.TabIndex = 73;
@@ -187,7 +189,7 @@ namespace PerhotelanZayyan
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(381, 399);
+            this.guna2Button1.Location = new System.Drawing.Point(381, 319);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(177, 44);
             this.guna2Button1.TabIndex = 75;
@@ -203,7 +205,7 @@ namespace PerhotelanZayyan
             this.btnsimpan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnsimpan.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnsimpan.ForeColor = System.Drawing.Color.White;
-            this.btnsimpan.Location = new System.Drawing.Point(674, 399);
+            this.btnsimpan.Location = new System.Drawing.Point(674, 319);
             this.btnsimpan.Name = "btnsimpan";
             this.btnsimpan.Size = new System.Drawing.Size(177, 44);
             this.btnsimpan.TabIndex = 74;
@@ -212,7 +214,7 @@ namespace PerhotelanZayyan
             // 
             // txtNmTipe
             // 
-            this.txtNmTipe.Location = new System.Drawing.Point(121, 222);
+            this.txtNmTipe.Location = new System.Drawing.Point(121, 142);
             this.txtNmTipe.Multiline = true;
             this.txtNmTipe.Name = "txtNmTipe";
             this.txtNmTipe.Size = new System.Drawing.Size(177, 40);
@@ -222,7 +224,8 @@ namespace PerhotelanZayyan
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(19, 237);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(19, 157);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 20);
             this.label4.TabIndex = 81;
@@ -232,7 +235,8 @@ namespace PerhotelanZayyan
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(52, 124);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(52, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(287, 39);
             this.label1.TabIndex = 79;
@@ -240,7 +244,7 @@ namespace PerhotelanZayyan
             // 
             // txtHarga
             // 
-            this.txtHarga.Location = new System.Drawing.Point(433, 222);
+            this.txtHarga.Location = new System.Drawing.Point(433, 142);
             this.txtHarga.Multiline = true;
             this.txtHarga.Name = "txtHarga";
             this.txtHarga.Size = new System.Drawing.Size(177, 40);
@@ -248,7 +252,7 @@ namespace PerhotelanZayyan
             // 
             // txtKapasitas
             // 
-            this.txtKapasitas.Location = new System.Drawing.Point(722, 226);
+            this.txtKapasitas.Location = new System.Drawing.Point(722, 146);
             this.txtKapasitas.Multiline = true;
             this.txtKapasitas.Name = "txtKapasitas";
             this.txtKapasitas.Size = new System.Drawing.Size(177, 40);
@@ -256,7 +260,7 @@ namespace PerhotelanZayyan
             // 
             // txtDeskripsi
             // 
-            this.txtDeskripsi.Location = new System.Drawing.Point(1007, 226);
+            this.txtDeskripsi.Location = new System.Drawing.Point(1007, 146);
             this.txtDeskripsi.Multiline = true;
             this.txtDeskripsi.Name = "txtDeskripsi";
             this.txtDeskripsi.Size = new System.Drawing.Size(177, 40);
@@ -266,7 +270,8 @@ namespace PerhotelanZayyan
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(922, 237);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(922, 157);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 20);
             this.label5.TabIndex = 85;

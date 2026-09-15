@@ -54,7 +54,7 @@ namespace PerhotelanZayyan
             // 
             // txtnkamar
             // 
-            this.txtnkamar.Location = new System.Drawing.Point(140, 222);
+            this.txtnkamar.Location = new System.Drawing.Point(140, 129);
             this.txtnkamar.Multiline = true;
             this.txtnkamar.Name = "txtnkamar";
             this.txtnkamar.Size = new System.Drawing.Size(177, 40);
@@ -64,7 +64,8 @@ namespace PerhotelanZayyan
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(71, 124);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(71, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(211, 39);
             this.label1.TabIndex = 64;
@@ -74,7 +75,8 @@ namespace PerhotelanZayyan
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(38, 237);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(38, 144);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 20);
             this.label4.TabIndex = 69;
@@ -90,7 +92,7 @@ namespace PerhotelanZayyan
             this.CmbStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.CmbStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.CmbStatus.ItemHeight = 30;
-            this.CmbStatus.Location = new System.Drawing.Point(708, 225);
+            this.CmbStatus.Location = new System.Drawing.Point(708, 132);
             this.CmbStatus.Name = "CmbStatus";
             this.CmbStatus.Size = new System.Drawing.Size(187, 36);
             this.CmbStatus.TabIndex = 63;
@@ -105,7 +107,7 @@ namespace PerhotelanZayyan
             this.CmbTKamar.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.CmbTKamar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.CmbTKamar.ItemHeight = 30;
-            this.CmbTKamar.Location = new System.Drawing.Point(439, 226);
+            this.CmbTKamar.Location = new System.Drawing.Point(439, 133);
             this.CmbTKamar.Name = "CmbTKamar";
             this.CmbTKamar.Size = new System.Drawing.Size(187, 36);
             this.CmbTKamar.TabIndex = 62;
@@ -119,7 +121,7 @@ namespace PerhotelanZayyan
             this.btnsimpan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnsimpan.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnsimpan.ForeColor = System.Drawing.Color.White;
-            this.btnsimpan.Location = new System.Drawing.Point(693, 399);
+            this.btnsimpan.Location = new System.Drawing.Point(693, 306);
             this.btnsimpan.Name = "btnsimpan";
             this.btnsimpan.Size = new System.Drawing.Size(177, 44);
             this.btnsimpan.TabIndex = 57;
@@ -135,7 +137,7 @@ namespace PerhotelanZayyan
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(400, 399);
+            this.guna2Button1.Location = new System.Drawing.Point(400, 306);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(177, 44);
             this.guna2Button1.TabIndex = 60;
@@ -146,7 +148,8 @@ namespace PerhotelanZayyan
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(646, 237);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(646, 144);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 20);
             this.label2.TabIndex = 53;
@@ -161,7 +164,7 @@ namespace PerhotelanZayyan
             this.btntambah.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btntambah.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btntambah.ForeColor = System.Drawing.Color.White;
-            this.btntambah.Location = new System.Drawing.Point(997, 399);
+            this.btntambah.Location = new System.Drawing.Point(997, 306);
             this.btntambah.Name = "btntambah";
             this.btntambah.Size = new System.Drawing.Size(177, 44);
             this.btntambah.TabIndex = 56;
@@ -172,7 +175,8 @@ namespace PerhotelanZayyan
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(334, 237);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(334, 144);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 20);
             this.label3.TabIndex = 54;
@@ -209,7 +213,7 @@ namespace PerhotelanZayyan
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(42, 458);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(42, 365);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.ReadOnly = true;
             this.guna2DataGridView1.RowHeadersVisible = false;

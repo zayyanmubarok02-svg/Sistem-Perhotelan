@@ -23,5 +23,15 @@ namespace PerhotelanZayyan
         {
 
         }
+
+        private void guna2Panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel3_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

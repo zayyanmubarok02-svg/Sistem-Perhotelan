@@ -40,7 +40,8 @@ namespace PerhotelanZayyan
         public void isiKamar()
         {
             CmbKamar.Items.Clear();
-            DB.crud("SELECT Nomor_kamar FROM kamar WHERE Status = 'tersedia'");
+            // PERBAIKAN: Menggunakan LOWER() agar tetap membaca status 'Tersedia' maupun 'tersedia'
+            DB.crud("SELECT Nomor_kamar FROM kamar WHERE LOWER(Status) = 'tersedia'");
             foreach (DataRow brs in DB.ds.Tables[0].Rows)
             {
                 CmbKamar.Items.Add(brs["Nomor_kamar"].ToString());
@@ -123,21 +124,6 @@ namespace PerhotelanZayyan
             isiStatus();
         }
 
-        private void btnsimpan_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void btntambah_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void CmbKamar_SelectedIndexChanged(object sender, EventArgs e)
         {
             hitungtotal();
@@ -189,7 +175,7 @@ namespace PerhotelanZayyan
 
                 bersih();
                 tampildata();
-                isiKamar(); 
+                isiKamar();
             }
         }
 

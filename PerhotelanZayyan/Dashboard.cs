@@ -56,7 +56,14 @@ namespace PerhotelanZayyan
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-
+            if (pnldrop.Visible == false)
+            {
+                pnldrop.Visible = true;
+            }
+            else
+            {
+                pnldrop.Visible = false;
+            }
         }
 
         private void pnlcontent_Paint(object sender, PaintEventArgs e)
@@ -136,7 +143,23 @@ namespace PerhotelanZayyan
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            pnldrop.Visible = false;
+        }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void guna2Button10_Click(object sender, EventArgs e)
+        {
+            DialogResult keluar = MessageBox.Show("Apakah ingin keluar?", "Logout", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (keluar == DialogResult.Yes)
+            {
+                Login L = new Login();
+                L.Show();
+                this.Hide();
+             }
         }
     }
 }

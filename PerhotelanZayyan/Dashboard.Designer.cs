@@ -31,13 +31,9 @@ namespace PerhotelanZayyan
         {
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnldrop = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.pnlcontent = new Guna.UI2.WinForms.Guna2Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.pnldrop = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
@@ -46,6 +42,10 @@ namespace PerhotelanZayyan
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pnlcontent = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.pnldrop.SuspendLayout();
@@ -73,8 +73,8 @@ namespace PerhotelanZayyan
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.SaddleBrown;
-            this.flowLayoutPanel1.Controls.Add(this.guna2Button3);
             this.flowLayoutPanel1.Controls.Add(this.guna2Button4);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button3);
             this.flowLayoutPanel1.Controls.Add(this.pnldrop);
             this.flowLayoutPanel1.Controls.Add(this.guna2Button8);
             this.flowLayoutPanel1.Controls.Add(this.guna2Button10);
@@ -83,62 +83,6 @@ namespace PerhotelanZayyan
             this.flowLayoutPanel1.Size = new System.Drawing.Size(180, 591);
             this.flowLayoutPanel1.TabIndex = 4;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
-            // 
-            // pnldrop
-            // 
-            this.pnldrop.Controls.Add(this.guna2Button9);
-            this.pnldrop.Controls.Add(this.guna2Button7);
-            this.pnldrop.Controls.Add(this.guna2Button6);
-            this.pnldrop.Controls.Add(this.guna2Button2);
-            this.pnldrop.Controls.Add(this.guna2Button5);
-            this.pnldrop.Controls.Add(this.guna2Button1);
-            this.pnldrop.Location = new System.Drawing.Point(3, 108);
-            this.pnldrop.Name = "pnldrop";
-            this.pnldrop.Size = new System.Drawing.Size(174, 296);
-            this.pnldrop.TabIndex = 2;
-            this.pnldrop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnldrop_Paint);
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.White;
-            this.guna2Panel1.Controls.Add(this.pictureBox1);
-            this.guna2Panel1.Location = new System.Drawing.Point(15, 15);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(183, 132);
-            this.guna2Panel1.TabIndex = 0;
-            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
-            // 
-            // guna2CustomGradientPanel2
-            // 
-            this.guna2CustomGradientPanel2.BackColor = System.Drawing.Color.White;
-            this.guna2CustomGradientPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(198, 15);
-            this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(1157, 132);
-            this.guna2CustomGradientPanel2.TabIndex = 2;
-            this.guna2CustomGradientPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2CustomGradientPanel2_Paint);
-            // 
-            // pnlcontent
-            // 
-            this.pnlcontent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlcontent.FillColor = System.Drawing.Color.Transparent;
-            this.pnlcontent.ForeColor = System.Drawing.Color.White;
-            this.pnlcontent.Location = new System.Drawing.Point(198, 147);
-            this.pnlcontent.Name = "pnlcontent";
-            this.pnlcontent.Size = new System.Drawing.Size(1157, 587);
-            this.pnlcontent.TabIndex = 3;
-            this.pnlcontent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlcontent_Paint);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PerhotelanZayyan.Properties.Resources.WhatsApp_Image_2026_08_23_at_21_53_42;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(185, 132);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // guna2Button3
             // 
@@ -154,7 +98,7 @@ namespace PerhotelanZayyan
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
             this.guna2Button3.Image = global::PerhotelanZayyan.Properties.Resources.Layers_24px;
-            this.guna2Button3.Location = new System.Drawing.Point(3, 3);
+            this.guna2Button3.Location = new System.Drawing.Point(3, 53);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(151, 49);
             this.guna2Button3.TabIndex = 3;
@@ -175,12 +119,26 @@ namespace PerhotelanZayyan
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
             this.guna2Button4.Image = global::PerhotelanZayyan.Properties.Resources.Home_64px;
-            this.guna2Button4.Location = new System.Drawing.Point(3, 58);
+            this.guna2Button4.Location = new System.Drawing.Point(3, 3);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Size = new System.Drawing.Size(162, 44);
             this.guna2Button4.TabIndex = 4;
             this.guna2Button4.Text = "Dashboard";
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
+            // 
+            // pnldrop
+            // 
+            this.pnldrop.Controls.Add(this.guna2Button9);
+            this.pnldrop.Controls.Add(this.guna2Button7);
+            this.pnldrop.Controls.Add(this.guna2Button6);
+            this.pnldrop.Controls.Add(this.guna2Button2);
+            this.pnldrop.Controls.Add(this.guna2Button5);
+            this.pnldrop.Controls.Add(this.guna2Button1);
+            this.pnldrop.Location = new System.Drawing.Point(3, 108);
+            this.pnldrop.Name = "pnldrop";
+            this.pnldrop.Size = new System.Drawing.Size(174, 296);
+            this.pnldrop.TabIndex = 2;
+            this.pnldrop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnldrop_Paint);
             // 
             // guna2Button9
             // 
@@ -342,6 +300,48 @@ namespace PerhotelanZayyan
             this.guna2Button10.TabIndex = 10;
             this.guna2Button10.Text = "Keluar";
             this.guna2Button10.Click += new System.EventHandler(this.guna2Button10_Click);
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.White;
+            this.guna2Panel1.Controls.Add(this.pictureBox1);
+            this.guna2Panel1.Location = new System.Drawing.Point(15, 15);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(183, 132);
+            this.guna2Panel1.TabIndex = 0;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PerhotelanZayyan.Properties.Resources.WhatsApp_Image_2026_08_23_at_21_53_42;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(185, 132);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // guna2CustomGradientPanel2
+            // 
+            this.guna2CustomGradientPanel2.BackColor = System.Drawing.Color.White;
+            this.guna2CustomGradientPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(198, 15);
+            this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(1157, 132);
+            this.guna2CustomGradientPanel2.TabIndex = 2;
+            this.guna2CustomGradientPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2CustomGradientPanel2_Paint);
+            // 
+            // pnlcontent
+            // 
+            this.pnlcontent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlcontent.FillColor = System.Drawing.Color.Transparent;
+            this.pnlcontent.ForeColor = System.Drawing.Color.White;
+            this.pnlcontent.Location = new System.Drawing.Point(198, 147);
+            this.pnlcontent.Name = "pnlcontent";
+            this.pnlcontent.Size = new System.Drawing.Size(1157, 587);
+            this.pnlcontent.TabIndex = 3;
+            this.pnlcontent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlcontent_Paint);
             // 
             // Dashboard
             // 

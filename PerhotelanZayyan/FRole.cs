@@ -21,7 +21,7 @@ namespace PerhotelanZayyan
         {
             TxtnNmrol.Clear();
             TxtKet.Clear();
-            label4.Text = "";
+            label1.Text = "";
         }
 
         public void tampildata()
@@ -100,7 +100,7 @@ namespace PerhotelanZayyan
                     string nmrol = "" + brs["Nama_role"];
                     string ket = "" + brs["Keterangan"];
 
-                    label4.Text = id;
+                    label1.Text = id;
                     TxtnNmrol.Text = nmrol;
                     TxtKet.Text = ket;
                 }
@@ -142,7 +142,7 @@ namespace PerhotelanZayyan
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            if (label4.Text == "")
+            if (label1.Text == "")
             {
                 MessageBox.Show(
                     "Silahkan pilih data yang ingin diubah terlebih dahulu!",
@@ -170,7 +170,7 @@ namespace PerhotelanZayyan
                 $"UPDATE role SET " +
                 $"Nama_role = '{TxtnNmrol.Text}', " +
                 $"Keterangan = '{TxtKet.Text}' " +
-                $"WHERE Id_role = '{label4.Text}'"
+                $"WHERE Id_role = '{label1.Text}'"
             );
 
             MessageBox.Show(

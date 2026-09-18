@@ -25,6 +25,8 @@ namespace PerhotelanZayyan
             txttotal.Text = "";
             txtkode.Text = "";
             label4.Text = "";
+            dtpCheckin.Value = DateTime.Now;
+            dtpCheckout.Value = DateTime.Now.AddDays(1);
         }
 
         public void isiTamu()
@@ -40,8 +42,8 @@ namespace PerhotelanZayyan
         public void isiKamar()
         {
             CmbKamar.Items.Clear();
-            // PERBAIKAN: Menggunakan LOWER() agar tetap membaca status 'Tersedia' maupun 'tersedia'
-            DB.crud("SELECT Nomor_kamar FROM kamar WHERE LOWER(Status) = 'tersedia'");
+            // Menampilkan seluruh nomor kamar
+            DB.crud("SELECT Nomor_kamar FROM kamar");
             foreach (DataRow brs in DB.ds.Tables[0].Rows)
             {
                 CmbKamar.Items.Add(brs["Nomor_kamar"].ToString());
@@ -60,23 +62,25 @@ namespace PerhotelanZayyan
         {
             guna2DataGridView1.Rows.Clear();
             DB.crud("SELECT booking.Id, booking.Kode_booking, tamu.Nama_tamu, kamar.Nomor_kamar, booking.Tgl_checkin, booking.Tgl_checkout, booking.Total_biaya, booking.Status_transaksi FROM booking JOIN tamu ON booking.Tamu_id = tamu.Id JOIN kamar ON booking.Kamar_id = kamar.Id");
+
             foreach (DataRow Row in DB.ds.Tables[0].Rows)
             {
                 string id = "" + Row["Id"];
                 string kode = "" + Row["Kode_booking"];
                 string namatamu = "" + Row["Nama_tamu"];
                 string nomorkamar = "" + Row["Nomor_kamar"];
-                string checkin = "" + Row["Tgl_checkin"];
-                string checkout = "" + Row["Tgl_checkout"];
+                string checkin = Convert.ToDateTime(Row["Tgl_checkin"]).ToString("yyyy-MM-dd HH:mm");
+                string checkout = Convert.ToDateTime(Row["Tgl_checkout"]).ToString("yyyy-MM-dd HH:mm");
                 string total = "" + Row["Total_biaya"];
                 string status = "" + Row["Status_transaksi"];
+
                 guna2DataGridView1.Rows.Add(id, kode, namatamu, nomorkamar, checkin, checkout, total, status);
             }
         }
 
         public void hitungtotal()
         {
-            if (CmbKamar.Text != "")
+            if (!string.IsNullOrEmpty(CmbKamar.Text))
             {
                 string nomorkamar = CmbKamar.Text;
                 DB.crud($"SELECT tipe_kamar.Harga_permalam FROM kamar JOIN tipe_kamar ON kamar.Tipe_kamar = tipe_kamar.Id WHERE kamar.Nomor_kamar = '{nomorkamar}'");
@@ -93,31 +97,6 @@ namespace PerhotelanZayyan
             }
         }
 
-        private void Fbooking_Load(object sender, EventArgs e)
-        {
-            tampildata();
-            isiTamu();
-            isiKamar();
-            isiStatus();
-        }
-
-        private void Fbooking_Load_1(object sender, EventArgs e)
-        {
-            tampildata();
-            isiTamu();
-            isiKamar();
-            isiStatus();
-        }
-
-        private void CmbTamu_DropDown(object sender, EventArgs e)
-        {
-            isiTamu();
-        }
-
-        private void CmbKamar_DropDown(object sender, EventArgs e)
-        {
-            isiKamar();
-        }
 
         private void CmbStatus_DropDown(object sender, EventArgs e)
         {
@@ -139,48 +118,58 @@ namespace PerhotelanZayyan
             hitungtotal();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            tampildata();
-            isiTamu();
-            isiKamar();
-        }
-
         private void btnsimpan_Click_1(object sender, EventArgs e)
         {
-            if (CmbTamu.Text == "" || CmbKamar.Text == "" || CmbStatus.SelectedIndex == -1)
+            if (string.IsNullOrEmpty(CmbTamu.Text) || string.IsNullOrEmpty(CmbKamar.Text) || CmbStatus.SelectedIndex == -1 || string.IsNullOrEmpty(txtkode.Text))
             {
-                MessageBox.Show("Masukan Data Yang Lengkap ! ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Masukkan Data Yang Lengkap (Termasuk Kode Booking)!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
             }
-            else
+
+            string namatamu = CmbTamu.Text;
+            string nomorkamar = CmbKamar.Text;
+            string checkin = dtpCheckin.Value.ToString("yyyy-MM-dd HH:mm:ss");
+            string checkout = dtpCheckout.Value.ToString("yyyy-MM-dd HH:mm:ss");
+            string total = txttotal.Text;
+            string status = CmbStatus.Text;
+            string kode = txtkode.Text;
+            string iduser = "1";
+
+            DB.crud($"SELECT Id FROM tamu WHERE Nama_tamu = '{namatamu}'");
+            if (DB.ds.Tables[0].Rows.Count == 0)
             {
-                string namatamu = CmbTamu.Text;
-                string nomorkamar = CmbKamar.Text;
-                string checkin = dtpCheckin.Value.ToString("yyyy-MM-dd HH:mm:ss");
-                string checkout = dtpCheckout.Value.ToString("yyyy-MM-dd HH:mm:ss");
-                string total = txttotal.Text;
-                string status = CmbStatus.Text;
-                string kode = txtkode.Text;
-                string iduser = "1";
-
-                DB.crud($"SELECT Id FROM tamu WHERE Nama_tamu = '{namatamu}'");
-                string idTamu = DB.ds.Tables[0].Rows[0]["Id"].ToString();
-
-                DB.crud($"SELECT Id FROM kamar WHERE Nomor_kamar = '{nomorkamar}'");
-                string idKamar = DB.ds.Tables[0].Rows[0]["Id"].ToString();
-
-                DB.crud($"INSERT INTO booking VALUES (NULL, '{kode}', '{idTamu}', '{idKamar}', '{iduser}', '{checkin}', '{checkout}', '{total}', '{status}')");
-
-                DB.crud($"UPDATE kamar SET Status = 'terisi' WHERE Id = '{idKamar}'");
-
-                bersih();
-                tampildata();
-                isiKamar();
+                MessageBox.Show("Tamu tidak ditemukan di database!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+            string idTamu = DB.ds.Tables[0].Rows[0]["Id"].ToString();
+
+            DB.crud($"SELECT Id FROM kamar WHERE Nomor_kamar = '{nomorkamar}'");
+            if (DB.ds.Tables[0].Rows.Count == 0)
+            {
+                MessageBox.Show("Kamar tidak ditemukan di database!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            string idKamar = DB.ds.Tables[0].Rows[0]["Id"].ToString();
+
+            DB.crud($"INSERT INTO booking (Kode_booking, Tamu_id, Kamar_id, User_id, Tgl_checkin, Tgl_checkout, Total_biaya, Status_transaksi) VALUES ('{kode}', '{idTamu}', '{idKamar}', '{iduser}', '{checkin}', '{checkout}', '{total}', '{status}')");
+
+            DB.crud($"UPDATE kamar SET Status = 'terisi' WHERE Id = '{idKamar}'");
+
+            MessageBox.Show("Data Booking Berhasil Disimpan!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            bersih();
+            tampildata();
+            isiKamar();
         }
 
         private void btntambah_Click_1(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(label4.Text))
+            {
+                MessageBox.Show("Pilih data yang ingin diubah terlebih dahulu dari tabel!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             string namatamu = CmbTamu.Text;
             string nomorkamar = CmbKamar.Text;
             string checkin = dtpCheckin.Value.ToString("yyyy-MM-dd HH:mm:ss");
@@ -188,10 +177,13 @@ namespace PerhotelanZayyan
             string total = txttotal.Text;
             string status = CmbStatus.Text;
 
+            // Tambahan Pengaman: Cek ketersediaan data sebelum ambil ID
             DB.crud($"SELECT Id FROM tamu WHERE Nama_tamu = '{namatamu}'");
+            if (DB.ds.Tables[0].Rows.Count == 0) return;
             string idTamu = DB.ds.Tables[0].Rows[0]["Id"].ToString();
 
             DB.crud($"SELECT Id FROM kamar WHERE Nomor_kamar = '{nomorkamar}'");
+            if (DB.ds.Tables[0].Rows.Count == 0) return;
             string idKamar = DB.ds.Tables[0].Rows[0]["Id"].ToString();
 
             DB.crud($"UPDATE booking SET Tamu_id = '{idTamu}', Kamar_id = '{idKamar}', Tgl_checkin = '{checkin}', Tgl_checkout = '{checkout}', Total_biaya = '{total}', Status_transaksi = '{status}' WHERE Id = '{label4.Text}'");
@@ -201,10 +193,11 @@ namespace PerhotelanZayyan
                 DB.crud($"UPDATE kamar SET Status = 'tersedia' WHERE Id = '{idKamar}'");
             }
 
+            MessageBox.Show("Data Berhasil Diperbarui!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             tampildata();
             bersih();
             isiKamar();
-            label4.Text = "";
         }
 
         private void guna2DataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
@@ -213,12 +206,13 @@ namespace PerhotelanZayyan
             int kolom = e.ColumnIndex;
             if (baris < 0) return;
 
-            if (kolom == 8)
+            if (kolom == 8) // Edit
             {
                 string idbar = guna2DataGridView1.Rows[baris].Cells[0].Value.ToString();
                 DB.crud($"SELECT booking.Id, booking.Kode_booking, tamu.Nama_tamu, kamar.Nomor_kamar, booking.Tgl_checkin, booking.Tgl_checkout, booking.Total_biaya, booking.Status_transaksi FROM booking JOIN tamu ON booking.Tamu_id = tamu.Id JOIN kamar ON booking.Kamar_id = kamar.Id WHERE booking.Id = '{idbar}'");
-                foreach (DataRow brs in DB.ds.Tables[0].Rows)
+                if (DB.ds.Tables[0].Rows.Count > 0)
                 {
+                    DataRow brs = DB.ds.Tables[0].Rows[0];
                     label4.Text = "" + brs["Id"];
                     txtkode.Text = "" + brs["Kode_booking"];
                     CmbTamu.Text = "" + brs["Nama_tamu"];
@@ -230,19 +224,73 @@ namespace PerhotelanZayyan
                 }
             }
 
-            if (kolom == 9)
+            if (kolom == 9) // Hapus
             {
                 string idbar = guna2DataGridView1.Rows[baris].Cells[0].Value.ToString();
-                DialogResult setuju = MessageBox.Show("Apakah Mau Hapus?" + idbar, "Pemberitahuan",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult setuju = MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Pemberitahuan", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (setuju == DialogResult.Yes)
                 {
                     DB.crud($"DELETE FROM booking WHERE Id = '{idbar}' ");
+                    tampildata();
+                    bersih();
                 }
-
-                tampildata();
-                bersih();
             }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            tampildata();
+            isiTamu();
+            isiKamar();
+        }
+
+        private void Fbooking_Load_1(object sender, EventArgs e)
+        {
+            tampildata();
+            isiTamu();
+            isiKamar();
+            isiStatus();
+        }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void CmbKamar_DropDown_1(object sender, EventArgs e)
+        {
+            isiKamar();
+        }
+
+        private void CmbTamu_DropDown_1(object sender, EventArgs e)
+        {
+            isiTamu();
+        }
+
+        private void CmbKamar_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            hitungtotal();
+        }
+
+        private void CmbTamu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            hitungtotal();
+
+        }
+
+        private void CmbStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            hitungtotal();
+        }
+
+        private void dtpCheckin_ValueChanged_1(object sender, EventArgs e)
+        {
+            hitungtotal();
+        }
+
+        private void dtpCheckout_ValueChanged_1(object sender, EventArgs e)
+        {
+            hitungtotal();
         }
     }
 }

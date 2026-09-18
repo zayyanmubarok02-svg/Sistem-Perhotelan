@@ -16,7 +16,30 @@ namespace PerhotelanZayyan
         {
             InitializeComponent();
         }
+        public void isiBooking()
+        {
+            CmbBook.Items.Clear(); // Ganti CmbBooking sesuai nama ComboBox BookingId kamu
+            DB.crud("SELECT Kode_booking FROM booking");
+            foreach (DataRow brs in DB.ds.Tables[0].Rows)
+            {
+                CmbBook.Items.Add(brs["Kode_booking"].ToString());
+            }
+        }
 
+        // Event saat Kode Booking dipilih oleh resepsionis
+        private void CmbBooking_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CmbBook.Text != "")
+            {
+                string kode = CmbBook.Text;
+                // Ambil Total_biaya dari tabel booking
+                DB.crud($"SELECT Total_biaya FROM booking WHERE Kode_booking = '{kode}'");
+                if (DB.ds.Tables[0].Rows.Count > 0)
+                {
+                    txtjumlah.Text = DB.ds.Tables[0].Rows[0]["Total_biaya"].ToString();
+                }
+            }
+        }
         public void bersih()
         {
             txtjumlah.Clear();
@@ -53,20 +76,22 @@ namespace PerhotelanZayyan
             CmbStatus.Items.Add("DP");
             CmbStatus.Items.Add("Lunas");
         }
-
         public void tampildata()
         {
             guna2DataGridView1.Rows.Clear();
+            // JOIN ke tabel booking untuk mengambil Kode_booking
             DB.crud("SELECT pembayaran.Id, booking.Kode_booking, pembayaran.Tanggal_bayar, pembayaran.Jumlah_bayar, pembayaran.Metode, pembayaran.Status FROM pembayaran JOIN booking ON pembayaran.Booking_id = booking.Id");
+
             foreach (DataRow Row in DB.ds.Tables[0].Rows)
             {
                 string id = "" + Row["Id"];
-                string kodebooking = "" + Row["Kode_booking"];
-                string tanggal = "" + Row["Tanggal_bayar"];
+                string kode = "" + Row["Kode_booking"];
+                string tgl = "" + Row["Tanggal_bayar"];
                 string jumlah = "" + Row["Jumlah_bayar"];
                 string metode = "" + Row["Metode"];
                 string status = "" + Row["Status"];
-                guna2DataGridView1.Rows.Add(id, kodebooking, tanggal, jumlah, metode, status);
+
+                guna2DataGridView1.Rows.Add(id, kode, tgl, jumlah, metode, status);
             }
         }
 
@@ -78,35 +103,6 @@ namespace PerhotelanZayyan
             isiMetode();
             isiStatus();
         }
-
-        // Otomatis mengisi nominal bayar berdasarkan Total_biaya di booking saat Kode Booking dipilih
-        private void CmbBook_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (CmbBook.Text != "")
-            {
-                DB.crud($"SELECT Total_biaya FROM booking WHERE Kode_booking = '{CmbBook.Text}'");
-                if (DB.ds.Tables[0].Rows.Count > 0)
-                {
-                    txtjumlah.Text = DB.ds.Tables[0].Rows[0]["Total_biaya"].ToString();
-                }
-            }
-        }
-
-        private void btnsimpan_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btntambah_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
-
         private void CmbBook_DropDown(object sender, EventArgs e)
         {
             isiBook();
@@ -207,6 +203,18 @@ namespace PerhotelanZayyan
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             tampildata();
+        }
+
+        private void CmbBook_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (CmbBook.Text != "")
+            {
+                DB.crud($"SELECT Total_biaya FROM booking WHERE Kode_booking = '{CmbBook.Text}'");
+                if (DB.ds.Tables[0].Rows.Count > 0)
+                {
+                    txtjumlah.Text = DB.ds.Tables[0].Rows[0]["Total_biaya"].ToString();
+                }
+            }
         }
     }
 }

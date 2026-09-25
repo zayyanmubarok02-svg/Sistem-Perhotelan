@@ -31,15 +31,15 @@ namespace PerhotelanZayyan
         {
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.pnldrop = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -76,6 +76,7 @@ namespace PerhotelanZayyan
             this.flowLayoutPanel1.Controls.Add(this.guna2Button4);
             this.flowLayoutPanel1.Controls.Add(this.guna2Button3);
             this.flowLayoutPanel1.Controls.Add(this.pnldrop);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button9);
             this.flowLayoutPanel1.Controls.Add(this.guna2Button8);
             this.flowLayoutPanel1.Controls.Add(this.guna2Button10);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 132);
@@ -83,27 +84,6 @@ namespace PerhotelanZayyan
             this.flowLayoutPanel1.Size = new System.Drawing.Size(180, 591);
             this.flowLayoutPanel1.TabIndex = 4;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
-            // 
-            // guna2Button3
-            // 
-            this.guna2Button3.Animated = true;
-            this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.BorderRadius = 20;
-            this.guna2Button3.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.FillColor = System.Drawing.Color.SaddleBrown;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Image = global::PerhotelanZayyan.Properties.Resources.Layers_24px;
-            this.guna2Button3.Location = new System.Drawing.Point(3, 53);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(151, 49);
-            this.guna2Button3.TabIndex = 3;
-            this.guna2Button3.Text = "Data Master";
-            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // guna2Button4
             // 
@@ -126,9 +106,29 @@ namespace PerhotelanZayyan
             this.guna2Button4.Text = "Dashboard";
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
+            // guna2Button3
+            // 
+            this.guna2Button3.Animated = true;
+            this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button3.BorderRadius = 20;
+            this.guna2Button3.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button3.FillColor = System.Drawing.Color.SaddleBrown;
+            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.guna2Button3.ForeColor = System.Drawing.Color.White;
+            this.guna2Button3.Image = global::PerhotelanZayyan.Properties.Resources.Layers_24px;
+            this.guna2Button3.Location = new System.Drawing.Point(3, 53);
+            this.guna2Button3.Name = "guna2Button3";
+            this.guna2Button3.Size = new System.Drawing.Size(151, 49);
+            this.guna2Button3.TabIndex = 3;
+            this.guna2Button3.Text = "Data Master";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
+            // 
             // pnldrop
             // 
-            this.pnldrop.Controls.Add(this.guna2Button9);
             this.pnldrop.Controls.Add(this.guna2Button7);
             this.pnldrop.Controls.Add(this.guna2Button6);
             this.pnldrop.Controls.Add(this.guna2Button2);
@@ -136,30 +136,9 @@ namespace PerhotelanZayyan
             this.pnldrop.Controls.Add(this.guna2Button1);
             this.pnldrop.Location = new System.Drawing.Point(3, 108);
             this.pnldrop.Name = "pnldrop";
-            this.pnldrop.Size = new System.Drawing.Size(174, 296);
+            this.pnldrop.Size = new System.Drawing.Size(174, 236);
             this.pnldrop.TabIndex = 2;
             this.pnldrop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnldrop_Paint);
-            // 
-            // guna2Button9
-            // 
-            this.guna2Button9.Animated = true;
-            this.guna2Button9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button9.BorderRadius = 20;
-            this.guna2Button9.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button9.DisabledState.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button9.DisabledState.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button9.DisabledState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button9.DisabledState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button9.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button9.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.guna2Button9.ForeColor = System.Drawing.Color.White;
-            this.guna2Button9.Image = global::PerhotelanZayyan.Properties.Resources.Calendar_24px;
-            this.guna2Button9.Location = new System.Drawing.Point(11, 241);
-            this.guna2Button9.Name = "guna2Button9";
-            this.guna2Button9.Size = new System.Drawing.Size(151, 46);
-            this.guna2Button9.TabIndex = 10;
-            this.guna2Button9.Text = "Booking";
-            this.guna2Button9.Click += new System.EventHandler(this.guna2Button9_Click);
             // 
             // guna2Button7
             // 
@@ -261,6 +240,27 @@ namespace PerhotelanZayyan
             this.guna2Button1.Text = "User";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
+            // guna2Button9
+            // 
+            this.guna2Button9.Animated = true;
+            this.guna2Button9.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button9.BorderRadius = 20;
+            this.guna2Button9.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button9.DisabledState.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button9.DisabledState.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button9.DisabledState.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button9.DisabledState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button9.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button9.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.guna2Button9.ForeColor = System.Drawing.Color.White;
+            this.guna2Button9.Image = global::PerhotelanZayyan.Properties.Resources.Calendar_24px;
+            this.guna2Button9.Location = new System.Drawing.Point(3, 350);
+            this.guna2Button9.Name = "guna2Button9";
+            this.guna2Button9.Size = new System.Drawing.Size(151, 46);
+            this.guna2Button9.TabIndex = 10;
+            this.guna2Button9.Text = "Booking";
+            this.guna2Button9.Click += new System.EventHandler(this.guna2Button9_Click);
+            // 
             // guna2Button8
             // 
             this.guna2Button8.BackColor = System.Drawing.Color.Transparent;
@@ -274,7 +274,7 @@ namespace PerhotelanZayyan
             this.guna2Button8.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.guna2Button8.ForeColor = System.Drawing.Color.White;
             this.guna2Button8.Image = global::PerhotelanZayyan.Properties.Resources.Money_24px;
-            this.guna2Button8.Location = new System.Drawing.Point(3, 410);
+            this.guna2Button8.Location = new System.Drawing.Point(3, 402);
             this.guna2Button8.Name = "guna2Button8";
             this.guna2Button8.Size = new System.Drawing.Size(162, 45);
             this.guna2Button8.TabIndex = 9;
@@ -294,7 +294,7 @@ namespace PerhotelanZayyan
             this.guna2Button10.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.guna2Button10.ForeColor = System.Drawing.Color.White;
             this.guna2Button10.Image = global::PerhotelanZayyan.Properties.Resources.icons8_exit_48;
-            this.guna2Button10.Location = new System.Drawing.Point(3, 461);
+            this.guna2Button10.Location = new System.Drawing.Point(3, 453);
             this.guna2Button10.Name = "guna2Button10";
             this.guna2Button10.Size = new System.Drawing.Size(162, 45);
             this.guna2Button10.TabIndex = 10;
@@ -326,6 +326,10 @@ namespace PerhotelanZayyan
             // 
             this.guna2CustomGradientPanel2.BackColor = System.Drawing.Color.White;
             this.guna2CustomGradientPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2CustomGradientPanel2.FillColor = System.Drawing.Color.SaddleBrown;
+            this.guna2CustomGradientPanel2.FillColor2 = System.Drawing.Color.SaddleBrown;
+            this.guna2CustomGradientPanel2.FillColor3 = System.Drawing.Color.SaddleBrown;
+            this.guna2CustomGradientPanel2.FillColor4 = System.Drawing.Color.SaddleBrown;
             this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(198, 15);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
             this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(1157, 132);
@@ -335,7 +339,7 @@ namespace PerhotelanZayyan
             // pnlcontent
             // 
             this.pnlcontent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlcontent.FillColor = System.Drawing.Color.Transparent;
+            this.pnlcontent.FillColor = System.Drawing.Color.White;
             this.pnlcontent.ForeColor = System.Drawing.Color.White;
             this.pnlcontent.Location = new System.Drawing.Point(198, 147);
             this.pnlcontent.Name = "pnlcontent";

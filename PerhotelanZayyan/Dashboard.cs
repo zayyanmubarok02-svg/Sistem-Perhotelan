@@ -56,14 +56,7 @@ namespace PerhotelanZayyan
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-            if (pnldrop.Visible == false)
-            {
-                pnldrop.Visible = true;
-            }
-            else
-            {
-                pnldrop.Visible = false;
-            }
+          
         }
 
         private void pnlcontent_Paint(object sender, PaintEventArgs e)

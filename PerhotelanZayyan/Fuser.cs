@@ -72,55 +72,37 @@ namespace PerhotelanZayyan
             DB.crud($"SELECT Id_role FROM role WHERE Nama_role = '{role}'");
             string idRole = DB.ds.Tables[0].Rows[0]["Id_role"].ToString();
 
-            DB.crud($"UPDATE users SET Username = '{txtuser.Text}', Password = '{txtpass.Text}', Nama = '{txtnama.Text}', Id_role = '{idRole}' WHERE Id = '{label4.Text}'");
+            DB.crud($"UPDATE users SET Username = '{txtuser.Text}', Password = '{txtpass.Text}', Nama = '{txtnama.Text}', Id_role = '{idRole}' WHERE Id = '{labelid.Text}'");
 
             tampildata();
             bersih();
-            label4.Text = "";
+            labelid.Text = "";
         }
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
         private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int baris = e.RowIndex;
-            int kolom = e.ColumnIndex;
-            if (kolom == 5)
+            // 1. Cek agar tidak error saat header diklik
+            if (e.RowIndex >= 0)
             {
+                // 2. Ambil baris yang sedang diklik
+                DataGridViewRow row = guna2DataGridView1.Rows[e.RowIndex];
 
-                string idbar = guna2DataGridView1.Rows[baris].Cells[0].Value.ToString();
-                DB.crud($"SELECT users.Id, users.Username, users.Password, users.Nama, role.Nama_role FROM users JOIN role ON users.Id_role = role.Id_role WHERE users.Id = '{idbar}'");
-                foreach (DataRow brs in DB.ds.Tables[0].Rows)
-                {
-                    string idr = "" + brs["Id"];
-                    string user = "" + brs["Username"];
-                    string pass = "" + brs["Password"];
-                    string nama = "" + brs["Nama"];
-                    string role = "" + brs["Nama_role"];
-                    label4.Text = idr;
-                    txtnama.Text = nama;
-                    txtuser.Text = user;
-                    txtpass.Text = pass;
-                    CmbRol.Text = role;
-                }
+                // 3. Masukkan nilai dari sel DataGridView ke TextBox / ComboBox
+                // Catatan: Ganti "Username", "Nama", dll. sesuai nama kolom di database/tabel kamu
 
-            }
+                // Simpan ID ke label/variabel penampung (penting untuk query UPDATE)
+                labelid.Text = row.Cells[0].Value.ToString();
 
-            if (kolom == 6)
-            {
-                string idbar = guna2DataGridView1.Rows[baris].Cells[0].Value.ToString();
-                DialogResult setuju = MessageBox.Show("Apakah Mau Hapus?" + idbar, "Pemberitahuan",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (setuju == DialogResult.Yes)
-                {
-                    DB.crud($"DELETE FROM users WHERE Id = '{idbar}' ");
-                }
+                txtuser.Text = row.Cells[1].Value.ToString();
+                txtnama.Text = row.Cells[3].Value.ToString();
+                CmbRol.Text = row.Cells[4].Value.ToString();
 
-                tampildata();
-                bersih();
+                // Kosongkan password saat edit demi keamanan, atau isi jika diperlukan
+                txtpass.Text = row.Cells[2].Value.ToString();
             }
         }
 

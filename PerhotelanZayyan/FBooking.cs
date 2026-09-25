@@ -252,11 +252,6 @@ namespace PerhotelanZayyan
             isiStatus();
         }
 
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
-
         private void CmbKamar_DropDown_1(object sender, EventArgs e)
         {
             isiKamar();
@@ -291,6 +286,53 @@ namespace PerhotelanZayyan
         private void dtpCheckout_ValueChanged_1(object sender, EventArgs e)
         {
             hitungtotal();
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            guna2DataGridView1.Rows.Clear();
+            DB.crud($"SELECT booking.Id, booking.Kode_booking, tamu.Nama_tamu, kamar.Nomor_kamar, booking.Tgl_checkin, booking.Tgl_checkout, booking.Total_biaya, booking.Status_transaksi FROM booking JOIN tamu ON booking.Tamu_id = tamu.Id JOIN kamar ON booking.Kamar_id = kamar.Id where Kode_booking like '%{guna2TextBox1.Text}%' ");
+
+            foreach (DataRow Row in DB.ds.Tables[0].Rows)
+            {
+                string id = "" + Row["Id"];
+                string kode = "" + Row["Kode_booking"];
+                string namatamu = "" + Row["Nama_tamu"];
+                string nomorkamar = "" + Row["Nomor_kamar"];
+                string checkin = Convert.ToDateTime(Row["Tgl_checkin"]).ToString("yyyy-MM-dd HH:mm");
+                string checkout = Convert.ToDateTime(Row["Tgl_checkout"]).ToString("yyyy-MM-dd HH:mm");
+                string total = "" + Row["Total_biaya"];
+                string status = "" + Row["Status_transaksi"];
+
+                guna2DataGridView1.Rows.Add(id, kode, namatamu, nomorkamar, checkin, checkout, total, status);
+            }
+        }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // 1. Cek agar tidak error saat header diklik
+            if (e.RowIndex >= 0)
+            {
+                // 2. Ambil baris yang sedang diklik
+                DataGridViewRow row = guna2DataGridView1.Rows[e.RowIndex];
+
+                // 3. Masukkan nilai dari sel DataGridView ke TextBox / ComboBox
+                // Catatan: Ganti "Username", "Nama", dll. sesuai nama kolom di database/tabel kamu
+
+                // Simpan ID ke label/variabel penampung (penting untuk query UPDATE)
+                labelId.Text = row.Cells[0].Value.ToString();
+
+                txtkode.Text = row.Cells[1].Value.ToString();
+                CmbTamu.Text = row.Cells[2].Value.ToString();
+                CmbKamar.Text = row.Cells[3].Value.ToString();
+                CmbStatus.Text = row.Cells[7].Value.ToString();
+                txttotal.Text = row.Cells[6].Value.ToString();
+            }
         }
     }
 }

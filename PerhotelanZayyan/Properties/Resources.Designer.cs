@@ -113,6 +113,16 @@ namespace PerhotelanZayyan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Edit_24px {
+            get {
+                object obj = ResourceManager.GetObject("Edit_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Home_64px {
             get {
                 object obj = ResourceManager.GetObject("Home_64px", resourceCulture);
@@ -156,6 +166,26 @@ namespace PerhotelanZayyan.Properties {
         internal static System.Drawing.Bitmap Money_24px {
             get {
                 object obj = ResourceManager.GetObject("Money_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sampah_24px {
+            get {
+                object obj = ResourceManager.GetObject("sampah_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Trash_Can_24px {
+            get {
+                object obj = ResourceManager.GetObject("Trash Can_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

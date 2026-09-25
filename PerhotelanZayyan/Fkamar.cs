@@ -146,35 +146,60 @@ namespace PerhotelanZayyan
 
         private void guna2DataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            int baris = e.RowIndex;
-            int kolom = e.ColumnIndex;
-            if (baris < 0) return;
-
-            // Kolom 4 = Edit, Kolom 5 = Hapus
-            if (kolom == 4)
+            // 1. Cek agar tidak error saat header diklik
+            if (e.RowIndex >= 0)
             {
-                string idbar = guna2DataGridView1.Rows[baris].Cells[0].Value.ToString();
-                DB.crud($"SELECT kamar.Id, kamar.Nomor_kamar, tipe_kamar.Nama_tipe, kamar.Status FROM kamar JOIN tipe_kamar ON kamar.Tipe_kamar = tipe_kamar.Id WHERE kamar.Id = '{idbar}'");
-                if (DB.ds.Tables[0].Rows.Count > 0)
-                {
-                    DataRow brs = DB.ds.Tables[0].Rows[0];
-                    label4.Text = "" + brs["Id"];
-                    txtnkamar.Text = "" + brs["Nomor_kamar"];
-                    CmbTKamar.Text = "" + brs["Nama_tipe"];
-                    CmbStatus.Text = "" + brs["Status"];
-                }
+                // 2. Ambil baris yang sedang diklik
+                DataGridViewRow row = guna2DataGridView1.Rows[e.RowIndex];
+
+                // 3. Masukkan nilai dari sel DataGridView ke TextBox / ComboBox
+                // Catatan: Ganti "Username", "Nama", dll. sesuai nama kolom di database/tabel kamu
+
+                // Simpan ID ke label/variabel penampung (penting untuk query UPDATE)
+                labelId.Text = row.Cells[0].Value.ToString();
+
+                txtnkamar.Text = row.Cells[1].Value.ToString();
+                CmbTKamar.Text = row.Cells[2].Value.ToString();
+                CmbStatus.Text = row.Cells[3].Value.ToString();
             }
+        }
 
-            if (kolom == 5)
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void labelId_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            guna2DataGridView1.Rows.Clear();
+            DB.crud($"SELECT kamar.Id, kamar.Nomor_kamar, tipe_kamar.Nama_tipe, kamar.Status FROM kamar JOIN tipe_kamar ON kamar.Tipe_kamar = tipe_kamar.Id where Nomor_kamar like '%{guna2TextBox1.Text}%'");
+            foreach (DataRow Row in DB.ds.Tables[0].Rows)
             {
-                string idbar = guna2DataGridView1.Rows[baris].Cells[0].Value.ToString();
-                DialogResult setuju = MessageBox.Show("Apakah Mau Hapus ID " + idbar + "?", "Pemberitahuan", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (setuju == DialogResult.Yes)
-                {
-                    DB.crud($"DELETE FROM kamar WHERE Id = '{idbar}' ");
-                    tampildata();
-                    bersih();
-                }
+                string id = "" + Row["Id"];
+                string nomor = "" + Row["Nomor_kamar"];
+                string tipe = "" + Row["Nama_tipe"];
+                string status = "" + Row["Status"];
+                guna2DataGridView1.Rows.Add(id, nomor, tipe, status);
             }
         }
     }

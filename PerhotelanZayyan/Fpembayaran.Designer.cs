@@ -29,16 +29,22 @@ namespace PerhotelanZayyan
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CmbBook = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnsimpan = new Guna.UI2.WinForms.Guna2Button();
             this.btntambah = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelId = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,16 +52,10 @@ namespace PerhotelanZayyan
             this.CmbStatus = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtjumlah = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
@@ -74,7 +74,7 @@ namespace PerhotelanZayyan
             this.CmbBook.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.CmbBook.ForeColor = System.Drawing.Color.Black;
             this.CmbBook.ItemHeight = 30;
-            this.CmbBook.Location = new System.Drawing.Point(456, 63);
+            this.CmbBook.Location = new System.Drawing.Point(8, 63);
             this.CmbBook.Name = "CmbBook";
             this.CmbBook.Size = new System.Drawing.Size(215, 36);
             this.CmbBook.TabIndex = 28;
@@ -85,7 +85,7 @@ namespace PerhotelanZayyan
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(300, 115);
+            this.label5.Location = new System.Drawing.Point(306, 115);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 20);
             this.label5.TabIndex = 27;
@@ -146,17 +146,18 @@ namespace PerhotelanZayyan
             // 
             this.guna2DataGridView1.AllowUserToAddRows = false;
             this.guna2DataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(53)))), ((int)(((byte)(37)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.OrangeRed;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(53)))), ((int)(((byte)(37)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.OrangeRed;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.guna2DataGridView1.ColumnHeadersHeight = 18;
+            this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
@@ -164,14 +165,14 @@ namespace PerhotelanZayyan
             this.Column4,
             this.Column7,
             this.Column8});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle9;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.Location = new System.Drawing.Point(9, 8);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
@@ -182,108 +183,11 @@ namespace PerhotelanZayyan
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(53)))), ((int)(((byte)(37)))));
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 18;
             this.guna2DataGridView1.ThemeStyle.ReadOnly = true;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick_1);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(623, 40);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 20);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Id";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(230, 40);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 20);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Metode";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(44, 279);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 20);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Status";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(26, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(305, 39);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Form Pembayaran";
-            // 
-            // CmbMetode
-            // 
-            this.CmbMetode.BackColor = System.Drawing.Color.Transparent;
-            this.CmbMetode.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
-            this.CmbMetode.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CmbMetode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbMetode.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CmbMetode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CmbMetode.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.CmbMetode.ForeColor = System.Drawing.Color.Black;
-            this.CmbMetode.ItemHeight = 30;
-            this.CmbMetode.Location = new System.Drawing.Point(234, 63);
-            this.CmbMetode.Name = "CmbMetode";
-            this.CmbMetode.Size = new System.Drawing.Size(215, 36);
-            this.CmbMetode.TabIndex = 31;
-            // 
-            // CmbStatus
-            // 
-            this.CmbStatus.BackColor = System.Drawing.Color.Transparent;
-            this.CmbStatus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
-            this.CmbStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbStatus.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CmbStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CmbStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.CmbStatus.ForeColor = System.Drawing.Color.Black;
-            this.CmbStatus.ItemHeight = 30;
-            this.CmbStatus.Items.AddRange(new object[] {
-            "DP ",
-            "LUNAS"});
-            this.CmbStatus.Location = new System.Drawing.Point(47, 302);
-            this.CmbStatus.Name = "CmbStatus";
-            this.CmbStatus.Size = new System.Drawing.Size(215, 36);
-            this.CmbStatus.TabIndex = 32;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(452, 40);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 20);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "Booking Id";
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::PerhotelanZayyan.Properties.Resources.Trash_Can_24px;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 145;
+            this.guna2DataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentClick);
             // 
             // Column1
             // 
@@ -321,6 +225,103 @@ namespace PerhotelanZayyan
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             // 
+            // labelId
+            // 
+            this.labelId.AutoSize = true;
+            this.labelId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelId.ForeColor = System.Drawing.Color.Black;
+            this.labelId.Location = new System.Drawing.Point(623, 40);
+            this.labelId.Name = "labelId";
+            this.labelId.Size = new System.Drawing.Size(23, 20);
+            this.labelId.TabIndex = 21;
+            this.labelId.Text = "Id";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(230, 40);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 20);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Metode";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(454, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 20);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Status";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(26, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(305, 39);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Form Pembayaran";
+            // 
+            // CmbMetode
+            // 
+            this.CmbMetode.BackColor = System.Drawing.Color.Transparent;
+            this.CmbMetode.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.CmbMetode.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CmbMetode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbMetode.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CmbMetode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CmbMetode.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.CmbMetode.ForeColor = System.Drawing.Color.Black;
+            this.CmbMetode.ItemHeight = 30;
+            this.CmbMetode.Location = new System.Drawing.Point(232, 63);
+            this.CmbMetode.Name = "CmbMetode";
+            this.CmbMetode.Size = new System.Drawing.Size(215, 36);
+            this.CmbMetode.TabIndex = 31;
+            // 
+            // CmbStatus
+            // 
+            this.CmbStatus.BackColor = System.Drawing.Color.Transparent;
+            this.CmbStatus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.CmbStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbStatus.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CmbStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CmbStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.CmbStatus.ForeColor = System.Drawing.Color.Black;
+            this.CmbStatus.ItemHeight = 30;
+            this.CmbStatus.Items.AddRange(new object[] {
+            "DP ",
+            "LUNAS"});
+            this.CmbStatus.Location = new System.Drawing.Point(458, 63);
+            this.CmbStatus.Name = "CmbStatus";
+            this.CmbStatus.Size = new System.Drawing.Size(215, 36);
+            this.CmbStatus.TabIndex = 32;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(6, 40);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 20);
+            this.label6.TabIndex = 33;
+            this.label6.Text = "Booking Id";
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::PerhotelanZayyan.Properties.Resources.Trash_Can_24px;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 145;
+            // 
             // guna2Panel1
             // 
             this.guna2Panel1.BorderColor = System.Drawing.Color.Black;
@@ -328,12 +329,14 @@ namespace PerhotelanZayyan
             this.guna2Panel1.BorderThickness = 1;
             this.guna2Panel1.Controls.Add(this.label6);
             this.guna2Panel1.Controls.Add(this.label5);
+            this.guna2Panel1.Controls.Add(this.label2);
+            this.guna2Panel1.Controls.Add(this.CmbStatus);
             this.guna2Panel1.Controls.Add(this.CmbMetode);
             this.guna2Panel1.Controls.Add(this.guna2Button1);
             this.guna2Panel1.Controls.Add(this.btntambah);
             this.guna2Panel1.Controls.Add(this.btnsimpan);
             this.guna2Panel1.Controls.Add(this.txtjumlah);
-            this.guna2Panel1.Controls.Add(this.label4);
+            this.guna2Panel1.Controls.Add(this.labelId);
             this.guna2Panel1.Controls.Add(this.CmbBook);
             this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.Controls.Add(this.guna2Panel3);
@@ -341,17 +344,6 @@ namespace PerhotelanZayyan
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(688, 284);
             this.guna2Panel1.TabIndex = 34;
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BorderColor = System.Drawing.Color.Black;
-            this.guna2Panel2.BorderRadius = 6;
-            this.guna2Panel2.BorderThickness = 1;
-            this.guna2Panel2.Controls.Add(this.guna2DataGridView1);
-            this.guna2Panel2.Location = new System.Drawing.Point(33, 75);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1095, 158);
-            this.guna2Panel2.TabIndex = 35;
             // 
             // txtjumlah
             // 
@@ -367,12 +359,13 @@ namespace PerhotelanZayyan
             this.txtjumlah.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtjumlah.ForeColor = System.Drawing.Color.Black;
             this.txtjumlah.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtjumlah.Location = new System.Drawing.Point(8, 138);
+            this.txtjumlah.Location = new System.Drawing.Point(10, 138);
             this.txtjumlah.Name = "txtjumlah";
             this.txtjumlah.PlaceholderText = "";
             this.txtjumlah.SelectedText = "";
             this.txtjumlah.Size = new System.Drawing.Size(663, 36);
             this.txtjumlah.TabIndex = 22;
+            this.txtjumlah.TextChanged += new System.EventHandler(this.txtjumlah_TextChanged);
             // 
             // guna2Panel3
             // 
@@ -383,6 +376,17 @@ namespace PerhotelanZayyan
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(682, 79);
             this.guna2Panel3.TabIndex = 34;
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BorderColor = System.Drawing.Color.Black;
+            this.guna2Panel2.BorderRadius = 6;
+            this.guna2Panel2.BorderThickness = 1;
+            this.guna2Panel2.Controls.Add(this.guna2DataGridView1);
+            this.guna2Panel2.Location = new System.Drawing.Point(33, 75);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(1095, 158);
+            this.guna2Panel2.TabIndex = 35;
             // 
             // guna2TextBox1
             // 
@@ -404,6 +408,7 @@ namespace PerhotelanZayyan
             this.guna2TextBox1.SelectedText = "";
             this.guna2TextBox1.Size = new System.Drawing.Size(382, 36);
             this.guna2TextBox1.TabIndex = 35;
+            this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // label7
             // 
@@ -423,8 +428,6 @@ namespace PerhotelanZayyan
             this.ClientSize = new System.Drawing.Size(1260, 708);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.guna2TextBox1);
-            this.Controls.Add(this.CmbStatus);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel2);
@@ -447,7 +450,7 @@ namespace PerhotelanZayyan
         private Guna.UI2.WinForms.Guna2Button btntambah;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelId;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

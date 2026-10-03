@@ -60,9 +60,10 @@ namespace PerhotelanZayyan
             this.txtkode = new Guna.UI2.WinForms.Guna2TextBox();
             this.txttotal = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.labelId = new System.Windows.Forms.Label();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.labelId = new System.Windows.Forms.Label();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -124,7 +125,7 @@ namespace PerhotelanZayyan
             this.btnsimpan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(78)))), ((int)(((byte)(55)))));
             this.btnsimpan.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnsimpan.ForeColor = System.Drawing.Color.White;
-            this.btnsimpan.Location = new System.Drawing.Point(410, 235);
+            this.btnsimpan.Location = new System.Drawing.Point(322, 235);
             this.btnsimpan.Name = "btnsimpan";
             this.btnsimpan.Size = new System.Drawing.Size(177, 44);
             this.btnsimpan.TabIndex = 38;
@@ -141,7 +142,7 @@ namespace PerhotelanZayyan
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(800, 235);
+            this.guna2Button1.Location = new System.Drawing.Point(712, 235);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(177, 44);
             this.guna2Button1.TabIndex = 42;
@@ -169,7 +170,7 @@ namespace PerhotelanZayyan
             this.btntambah.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
             this.btntambah.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btntambah.ForeColor = System.Drawing.Color.White;
-            this.btntambah.Location = new System.Drawing.Point(605, 235);
+            this.btntambah.Location = new System.Drawing.Point(517, 235);
             this.btntambah.Name = "btntambah";
             this.btntambah.Size = new System.Drawing.Size(177, 44);
             this.btntambah.TabIndex = 37;
@@ -221,7 +222,7 @@ namespace PerhotelanZayyan
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(24, 372);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(16, 372);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.ReadOnly = true;
             this.guna2DataGridView1.RowHeadersVisible = false;
@@ -432,7 +433,7 @@ namespace PerhotelanZayyan
             this.guna2Panel1.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel1.BorderRadius = 6;
             this.guna2Panel1.BorderThickness = 1;
-            this.guna2Panel1.Controls.Add(this.labelId);
+            this.guna2Panel1.Controls.Add(this.guna2Button2);
             this.guna2Panel1.Controls.Add(this.label7);
             this.guna2Panel1.Controls.Add(this.guna2Button1);
             this.guna2Panel1.Controls.Add(this.label6);
@@ -455,6 +456,18 @@ namespace PerhotelanZayyan
             this.guna2Panel1.Size = new System.Drawing.Size(1122, 292);
             this.guna2Panel1.TabIndex = 57;
             // 
+            // labelId
+            // 
+            this.labelId.AutoSize = true;
+            this.labelId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelId.ForeColor = System.Drawing.Color.Black;
+            this.labelId.Location = new System.Drawing.Point(1057, 28);
+            this.labelId.Name = "labelId";
+            this.labelId.Size = new System.Drawing.Size(42, 20);
+            this.labelId.TabIndex = 72;
+            this.labelId.Text = "Role";
+            this.labelId.Visible = false;
+            // 
             // guna2TextBox1
             // 
             this.guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
@@ -468,7 +481,7 @@ namespace PerhotelanZayyan
             this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(908, 20);
+            this.guna2TextBox1.Location = new System.Drawing.Point(816, 20);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PlaceholderText = "";
             this.guna2TextBox1.SelectedText = "";
@@ -481,29 +494,35 @@ namespace PerhotelanZayyan
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(824, 28);
+            this.label9.Location = new System.Drawing.Point(738, 25);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 20);
             this.label9.TabIndex = 57;
             this.label9.Text = "Search";
             // 
-            // labelId
+            // guna2Button2
             // 
-            this.labelId.AutoSize = true;
-            this.labelId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelId.ForeColor = System.Drawing.Color.Black;
-            this.labelId.Location = new System.Drawing.Point(344, 251);
-            this.labelId.Name = "labelId";
-            this.labelId.Size = new System.Drawing.Size(42, 20);
-            this.labelId.TabIndex = 72;
-            this.labelId.Text = "Role";
-            this.labelId.Visible = false;
+            this.guna2Button2.BorderRadius = 10;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.Red;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Location = new System.Drawing.Point(906, 235);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(177, 44);
+            this.guna2Button2.TabIndex = 57;
+            this.guna2Button2.Text = "Hapus";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // Fbooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.labelId);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.guna2TextBox1);
             this.Controls.Add(this.label1);
@@ -553,5 +572,6 @@ namespace PerhotelanZayyan
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label labelId;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }

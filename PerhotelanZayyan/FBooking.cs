@@ -334,5 +334,33 @@ namespace PerhotelanZayyan
                 txttotal.Text = row.Cells[6].Value.ToString();
             }
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            if (guna2DataGridView1.CurrentRow == null)
+            {
+                MessageBox.Show("Pilih data yang ingin dihapus!");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show(
+                "Apakah Anda yakin ingin menghapus data ini?",
+                "Konfirmasi",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                int id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells[0].Value);
+
+                DB.crud("DELETE FROM booking WHERE Id = " + id);
+
+                MessageBox.Show("Data berhasil dihapus!");
+
+                tampildata();
+                bersih();
+            }
+        }
     }
 }

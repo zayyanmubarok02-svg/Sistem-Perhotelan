@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 
 namespace PerhotelanZayyan
 {
@@ -260,6 +263,17 @@ namespace PerhotelanZayyan
 
                 guna2DataGridView1.Rows.Add(id, kode, tgl, jumlah, metode, status);
             }
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            Form9 CTK = new Form9();
+            CTK.ShowDialog();
         }
     }
 }

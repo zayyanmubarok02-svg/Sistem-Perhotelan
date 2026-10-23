@@ -60,10 +60,10 @@ namespace PerhotelanZayyan
             this.txtkode = new Guna.UI2.WinForms.Guna2TextBox();
             this.txttotal = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.labelId = new System.Windows.Forms.Label();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -456,6 +456,23 @@ namespace PerhotelanZayyan
             this.guna2Panel1.Size = new System.Drawing.Size(1122, 292);
             this.guna2Panel1.TabIndex = 57;
             // 
+            // guna2Button2
+            // 
+            this.guna2Button2.BorderRadius = 10;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.Red;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Location = new System.Drawing.Point(906, 235);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(177, 44);
+            this.guna2Button2.TabIndex = 57;
+            this.guna2Button2.Text = "Hapus";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
             // labelId
             // 
             this.labelId.AutoSize = true;
@@ -500,23 +517,6 @@ namespace PerhotelanZayyan
             this.label9.TabIndex = 57;
             this.label9.Text = "Search";
             // 
-            // guna2Button2
-            // 
-            this.guna2Button2.BorderRadius = 10;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.Red;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(906, 235);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(177, 44);
-            this.guna2Button2.TabIndex = 57;
-            this.guna2Button2.Text = "Hapus";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
-            // 
             // Fbooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -528,6 +528,7 @@ namespace PerhotelanZayyan
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2DataGridView1);
             this.Controls.Add(this.guna2Panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Fbooking";
             this.Text = "FBooking";
             this.Load += new System.EventHandler(this.Fbooking_Load_1);
